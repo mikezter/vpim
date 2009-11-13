@@ -2,22 +2,15 @@ require 'ubygems'
 require 'pp'
 require 'rake'
 
-def info(s)
-  {
-    :author => "Sam Roberts",
-    :email => "vieuxtech@gmail.com",
-    :homepage => "http://vpim.rubyforge.org",
-    :rubyforge_project => "vpim",
-  }.each do |k,v|
-    s.send(k.to_s+"=", v)
-  end
-end
-
 spec_vpim = Gem::Specification.new do |s|
-  info(s)
-  s.name              = "vpim"
-  s.version           = `ruby stamp.rb`
-  s.summary           = "iCalendar and vCard support for ruby"
+  s.author            = "Sam Roberts"
+  s.email             = "vieuxtech@gmail.com"
+  s.homepage          = "http://vpim.rubyforge.org"
+  s.rubyforge_project = "vpim"
+  s.name              = "fairtilizer-vpim"
+  #s.version           = `ruby stamp.rb`
+  s.version           = "0.695"
+  s.summary           = "iCalendar and vCard support for ruby (Fork of sam-github/vpim to make it compatible with ruby 1.9 - http://github.com/fairtilizer/vpim)"
   s.description       = <<'---'
 This is a pure-ruby library for decoding and encoding vCard and iCalendar data
 ("personal information") called vPim.
@@ -48,7 +41,10 @@ end
 #pp [spec_vpim, spec_vpim.instance_variables]
 
 spec_vpim_icalendar = Gem::Specification.new do |s|
-  info(s)
+  s.author            = "Sam Roberts"
+  s.email             = "vieuxtech@gmail.com"
+  s.homepage          = "http://vpim.rubyforge.org"
+  s.rubyforge_project = "vpim"  
   s.name              = "vpim_icalendar"
   s.version           = "1.1"
   s.summary           = "Virtual gem depending on vPim's iCalendar support for ruby"
